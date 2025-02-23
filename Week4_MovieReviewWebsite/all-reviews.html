@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('assets/images/image.png') center/cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            width: 80%;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            background: white;
+            color: black;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Reviews</h1>
+    <ul id="all-review-list"></ul> <!-- Display all reviews here -->
+    <button onclick="goBack()">Back to Review Page</button>
+
+    <script>
+        function loadReviews() {
+            let reviews = localStorage.getItem("reviews");
+    
+            if (!reviews) {
+                document.getElementById("all-review-list").innerHTML = "<p>No reviews yet!</p>";
+                return;
+            }
+    
+            reviews = JSON.parse(reviews); // Convert string to object
+    
+            if (!Array.isArray(reviews)) {
+                localStorage.removeItem("reviews"); // Fix corrupted storage
+                document.getElementById("all-review-list").innerHTML = "<p>No reviews yet!</p>";
+                return;
+            }
+    
+            const reviewList = document.getElementById("all-review-list");
+            reviewList.innerHTML = ""; // Clear previous content
+    
+            reviews.forEach((review) => {
+                if (review.name && review.rating && review.text) {  // Ensure data is valid
+                    const li = document.createElement("li");
+                    li.innerHTML = `<strong>${review.name}</strong> (${review.rating}⭐): ${review.text}`;
+                    reviewList.appendChild(li);
+                }
+            });
+    
+            if (reviewList.innerHTML === "") {
+                reviewList.innerHTML = "<p>No reviews yet!</p>";
+            }
+        }
+    
+        function goBack() {
+            window.location.href = "reviews.html";
+        }
+    
+        document.addEventListener("DOMContentLoaded", loadReviews);
+    </script>
+    
+</body>
+</html>
