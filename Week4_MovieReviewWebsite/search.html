@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Movies</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🔍 Find Your Favorite Movies</h1>
+    </header>
+
+    <main>
+        <input type="text" id="search-box" placeholder="Type to search...">
+        <div id="search-results"></div>
+    </main>
+
+    <!-- Movie images with names -->
+    <div class="movie-images">
+        <div class="movie-item">
+            <img src="assets/images/amaran.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Amaran</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/lucky.jpg" alt="Lucky Bhaskar Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Lucky Bhaskar</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/open.jpg" alt="Open Heilmer Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Open Heilmer</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/avan.jpg" alt="Avan Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Avengers End Game</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/lb.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Lubber Pandhu</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/lgm.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">LGM</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/jj.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">96</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/karnan.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Karnan</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/mas.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Master</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/sul.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Sulthan</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/ay.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Ayalaan</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/mersal.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Mersal</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/leo.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">LEO</div>
+        </div>
+        <div class="movie-item">
+            <img src="assets/images/ls.jpg" alt="Amaran Movie" class="movie-img" onclick="openModal(this)">
+            <div class="movie-name">Lal Salaam</div>
+        </div>
+    </div>
+
+    <!-- Modal for Image Pop-up -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script src="js/search.js"></script>
+</body>
+</html>
+<body style="background: url('assets/images/thh.jpg') no-repeat center center/cover;"></body>
