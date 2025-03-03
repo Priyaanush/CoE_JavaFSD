@@ -1,6 +1,5 @@
 import java.util.*;
 
-// Enum representing room features
 enum RoomFeature {
     PROJECTOR,
     VIDEO_CONFERENCING,
@@ -9,7 +8,7 @@ enum RoomFeature {
     AIR_CONDITIONING
 }
 
-// Class representing a meeting room
+
 class MeetingRoom {
     private String roomId;
     private String roomName;
@@ -41,7 +40,7 @@ class MeetingRoom {
     }
 }
 
-// Class to manage room scheduling
+
 class RoomScheduler {
     private Map<String, MeetingRoom> rooms;
 
@@ -74,7 +73,6 @@ class RoomScheduler {
     }
 }
 
-// Testing the RoomScheduler
 public class MeetingRoomSchedulerTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -91,7 +89,7 @@ public class MeetingRoomSchedulerTest {
             String roomName = scanner.nextLine();
             System.out.print("Enter Capacity: ");
             int capacity = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             System.out.print("Enter features (comma-separated, e.g., PROJECTOR,WHITEBOARD): ");
             String[] featuresInput = scanner.nextLine().split(",");
